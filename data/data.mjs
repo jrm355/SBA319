@@ -11,9 +11,24 @@ export const slashers = [
         series:"Saw",
         films: 10
     },
-    {   name: "Chucky",
-        introduced: 1988,
-        series: "Child's Play",
-        films: 9
+    {   name: "Death",
+        introduced: 2000,
+        series: "Final Destination",
+        films: 6
+    },
+    {   name: "John Wick",
+        introduced: 2014,
+        series: "John Wick",
+        films: 5
+    },
+    {   name: "The Creeper",
+        introduced: 2001,
+        series: "Jeepers Creepers",
+        films: 4
+    },
+    {   name: "Noone",
+        introduced: 0,
+        series: "delete",
+        films: 200
     },
 ]

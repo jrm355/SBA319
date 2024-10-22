@@ -1,9 +1,11 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+dotenv.config(); // Make sure this is at the top of your file
 
-dotenv.config();
+// console.log('MongoDB URI:', process.env.mongoURI); // Check if the value is undefined
 
 const connectionString = process.env.mongoURI;
+console.log(process.env)
 
 export default async function connectDB() {
   try {
@@ -14,15 +16,5 @@ export default async function connectDB() {
     process.exit(1);
   }
 }
-//reconnection logix
-mongoose.connection.on('disconnected', () => {
-    console.log('Stray Chuckys have been on the loose, reconnecting...');
-    connectDB(); 
-});
-  
-//Gracefyk shutdown, no open connection when app is terminated 
-process.on('SIGINT', async () => {
-    await mongoose.connection.close();
-    console.log('Jason went home for the day, Mongoose connection closed due to app becoming another victim');
-    process.exit(0);
-  });
+
+
