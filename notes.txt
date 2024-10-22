@@ -1,0 +1,5 @@
+I just like having a non code notes tab
+
+npm init -y
+npm i nodemon mongoose dotenv
+.gitignore
