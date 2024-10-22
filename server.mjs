@@ -2,6 +2,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
+import connectDB from './db/conn.mjs';
+import slasherRoutes from './routes/slasherRoutes.mjs';
+import { slashers } from './data/data.mjs';
+import slasher from './models/slasherSchema.mjs'
+
 
 
 //setup

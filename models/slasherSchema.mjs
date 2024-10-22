@@ -5,12 +5,16 @@ const slahserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    danger: {
+    introduced: {
         type: Number,
         required: true
     },
-    species: {
+    series: {
         type: String,
+        required: true
+    },
+    films: {
+        type: Number,
         required: true
     }
 
