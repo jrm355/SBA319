@@ -30,30 +30,38 @@ router.get('/', async (req, res) => {
 
 
 //Update
+
 router.put('/:id', async (req, res) => {
-    try {
-      let updatedSlasher = await slasher.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
-  
-      res.json(updatedSlasher);
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ msg: 'Server Error' });
+  try {
+    const updatedSlasher = await slasher.findByIdAndUpdate(req.params.id, req.body, {
+      new: true, // returns the updated document
+    });
+
+    if (!updatedSlasher) {
+      return res.status(404).json({ msg: 'Slasher not found' });
     }
-  });
+
+    res.json(updatedSlasher);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: 'Server Error' });
+  }
+});
 
 
-//Delete
+// Delete
 router.delete('/:id', async (req, res) => {
-    try {
-      let deletedSlasher = await slasher.findByIdAndDelete(req.params.id);
-  
-      res.json(deletedSlasher);
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ msg: 'Server Error' });
+  try {
+    const deletedSlasher = await slasher.findByIdAndDelete(req.params.id);
+
+    if (!deletedSlasher) {
+      return res.status(404).json({ msg: 'Slasher not found' });
     }
-  });
-  
+
+    res.json({ msg: 'Slasher deleted', deletedSlasher });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: 'Server Error' });
+  }
+});
   export default router;

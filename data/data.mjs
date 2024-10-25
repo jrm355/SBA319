@@ -2,7 +2,7 @@ export const slashers = [
     {
         name: "Michael Myers",
         introduced: 1978,
-        series: 'Halloween',
+        series: "Halloween",
         films: 13
     },
     {
