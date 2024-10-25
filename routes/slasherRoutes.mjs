@@ -6,22 +6,20 @@ const router = express.Router();
 //CRUD
 // create
 router.post('/', async (req, res) => {
-    try {
-      const newSlasher = new Slasher(req.body);
-  
-      await newSlasher.save();
-  
-      res.json(newSlasher);
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ msg: 'Server Error' });
-    }
-  });
+  try {
+    const newSlasher = new slasher(req.body); // Assuming slasher is imported from the schema
+    await newSlasher.save();
+    res.json(newSlasher);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: 'Server Error' });
+  }
+});
 
 //Read
 router.get('/', async (req, res) => {
     try {
-      const allSlashers = await Slasher.find({});
+      const allSlashers = await slasher.find({});
   
       res.json(allSlashers);
     } catch (err) {
@@ -34,7 +32,7 @@ router.get('/', async (req, res) => {
 //Update
 router.put('/:id', async (req, res) => {
     try {
-      let updatedSlasher = await Slasher.findByIdAndUpdate(req.params.id, req.body, {
+      let updatedSlasher = await slasher.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
       });
   
@@ -49,7 +47,7 @@ router.put('/:id', async (req, res) => {
 //Delete
 router.delete('/:id', async (req, res) => {
     try {
-      let deletedSlasher = await Slasher.findByIdAndDelete(req.params.id);
+      let deletedSlasher = await slasher.findByIdAndDelete(req.params.id);
   
       res.json(deletedSlasher);
     } catch (err) {

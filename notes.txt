@@ -3,3 +3,5 @@ I just like having a non code notes tab
 npm init -y
 npm i nodemon mongoose dotenv express
 .gitignore
+
+git rev-list --count HEAD see how many commits

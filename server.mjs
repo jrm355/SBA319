@@ -23,8 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
 //routes
-app.use('/slasher', slasherRoutes)
-
+app.use('/slasher', slasherRoutes);
 
 //listener
 app.listen(PORT, () => {
