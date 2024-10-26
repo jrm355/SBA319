@@ -32,3 +32,7 @@ export const slashers = [
         films: 200
     },
 ]
+
+ 
+
+export default mongoose.model('Slasher', slasherSchema);

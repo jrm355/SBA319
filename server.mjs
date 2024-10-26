@@ -6,6 +6,7 @@ import connectDB from './db/conn.mjs';
 import slasherRoutes from './routes/slasherRoutes.mjs';
 import { slashers } from './data/data.mjs';
 import slasher from './models/slasherSchema.mjs'
+import sawRoutes from './routes/sawRoutes.mjs';
 
 
 
@@ -24,6 +25,8 @@ app.use(bodyParser.json({ extended: true }));
 
 //routes
 app.use('/slasher', slasherRoutes);
+app.use('/saw', sawRoutes);
+
 
 //listener
 app.listen(PORT, () => {

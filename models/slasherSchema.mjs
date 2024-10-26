@@ -20,6 +20,8 @@ const slahserSchema = new mongoose.Schema({
 
 });
 
-slahserSchema.index({ name: 1 })
-
+//Creating indexes
+slasherSchema.index({ name: 1 });        //search by name
+slasherSchema.index({ introduced: 1 });   //search by year
+slasherSchema.index({ series: 1 });     //search by franchise
 export default mongoose.model('Slasher', slahserSchema);
