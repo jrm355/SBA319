@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
-const slahserSchema = new mongoose.Schema({
+const slasherSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -17,11 +17,11 @@ const slahserSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
-
 });
 
-//Creating indexes
-slasherSchema.index({ name: 1 });        //search by name
-slasherSchema.index({ introduced: 1 });   //search by year
-slasherSchema.index({ series: 1 });     //search by franchise
-export default mongoose.model('Slasher', slahserSchema);
+// Indexes for efficient searching
+slasherSchema.index({ name: 1 });        // search by name
+slasherSchema.index({ introduced: 1 });  // search by year
+slasherSchema.index({ series: 1 });      // search by series
+
+export default mongoose.model('Slasher', slasherSchema);

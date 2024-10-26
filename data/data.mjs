@@ -1,4 +1,4 @@
-export const slashers = [
+ export const slashers = [
     {
         name: "Michael Myers",
         introduced: 1978,
@@ -32,7 +32,3 @@ export const slashers = [
         films: 200
     },
 ]
-
- 
-
-export default mongoose.model('Slasher', slasherSchema);
